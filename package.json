@@ -9,5 +9,8 @@
   "keywords": [
     "LINE",
     "LIFF"
-  ]
+  ],
+  "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.8.1"
+  }
 }

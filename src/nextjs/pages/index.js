@@ -11,7 +11,7 @@ export default function Home(props) {
   return (
     <div>
       <Head>
-        <title>LIFF Starter</title>
+        <title>Mahalo Living</title>
       </Head>
       <div className="home">
         <h1 className="home__title">
@@ -20,7 +20,7 @@ export default function Home(props) {
             className="home__title__link"
             href="https://developers.line.biz/en/docs/liff/overview/"
           >
-            LIFF Starter!
+            Mahalo Living! {/* ここを変更 */}
           </a>
         </h1>
         <div className="home__badges">
