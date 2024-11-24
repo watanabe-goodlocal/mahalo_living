@@ -1,9 +1,16 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./components/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./stories/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#333333",
+      },
+    },
   },
   plugins: [],
 };

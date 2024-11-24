@@ -1,8 +1,8 @@
-import FormInput from "./FormInput";
+import Input from "./Input";
 
 export default {
   title: "ui/FormInput",
-  component: FormInput,
+  component: Input,
   args: {},
 };
 
