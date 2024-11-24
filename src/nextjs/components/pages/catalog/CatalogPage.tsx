@@ -1,8 +1,22 @@
+import FormInput from "@/components/ui/FormInput/FormInput";
+
 export default function CatalogPage() {
   return (
-    <div className="bg-red-300">
-      <div className="bg-blue-500 text-white p-5">Tailwindが動いています！</div>
-      <h1>Catalog Form</h1>
+    <div>
+      <h1 className="text-3xl font-medium text-center p-12">
+        資料請求フォーム
+      </h1>
+      <div className="text-center">
+        <p>カタログをご希望の方はこちらからお問い合わせください。</p>
+        <p>※同業の方の情報収集目的でのお問い合わせはご遠慮ください。</p>
+      </div>
+      <div className="p-10">
+        <FormInput
+          label="お名前"
+          required={true}
+          placeholder="例）山田　太郎"
+        />
+      </div>
     </div>
   );
 }
