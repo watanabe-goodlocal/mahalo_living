@@ -1,7 +1,15 @@
 import { Button as MUIButton } from "@mui/material";
 
-export default function Button({ label }: { label: string }) {
+export default function Button({
+  label,
+  type,
+}: {
+  label: string;
+  type?: "submit";
+}) {
   return (
-    <MUIButton className="bg-primary text-white w-full py-4">{label}</MUIButton>
+    <MUIButton type={type} className="bg-primary text-white w-full py-4">
+      {label}
+    </MUIButton>
   );
 }
