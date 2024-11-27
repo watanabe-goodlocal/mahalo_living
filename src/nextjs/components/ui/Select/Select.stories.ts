@@ -1,4 +1,5 @@
 import Select from "./Select";
+import { prefectureOptions } from "utils/prefectures";
 
 export default {
   title: "ui/Select",
@@ -8,8 +9,9 @@ export default {
 
 export const Primary = {
   args: {
-    label: "お名前",
+    label: "都道府県",
     required: true,
-    placeholder: "例）山田　太郎",
+    placeholder: "- 都道府県選択 -",
+    options: prefectureOptions,
   },
 };
