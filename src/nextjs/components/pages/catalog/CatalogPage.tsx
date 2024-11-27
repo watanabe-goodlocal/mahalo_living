@@ -13,7 +13,6 @@ export default function CatalogPage() {
     handleSubmit,
     formState: { errors },
   } = useForm<CatalogPageProps>();
-  // console.log(errors);
   const onSubmit: SubmitHandler<CatalogPageProps> = (data) => console.log(data);
 
   return (
@@ -26,21 +25,13 @@ export default function CatalogPage() {
         <p>※同業の方の情報収集目的でのお問い合わせはご遠慮ください。</p>
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="p-10">
-        {/* <input
-          // label="お名前"
-          required={true}
-          placeholder="例）山田　太郎"
-          // error={!!errors.name}
-          // helperText={errors.name?.message}
-          {...register("name")}
-        /> */}
         <Input
           label="お名前"
           required={true}
           placeholder="例）山田　太郎"
           error={!!errors.name}
           helperText={errors.name?.message}
-          {...register("name")}
+          {...register("name", { required: "お名前を入力してください" })}
         />
         <Input
           label="メールアドレス"
@@ -48,7 +39,13 @@ export default function CatalogPage() {
           placeholder="例）email@address.com"
           error={!!errors.email}
           helperText={errors.email?.message}
-          {...register("email")}
+          {...register("email", {
+            required: "メールアドレスを入力してください",
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "メールアドレスの形式が不正です",
+            },
+          })}
         />
         <Button type="submit" label="送信する" />
       </form>
