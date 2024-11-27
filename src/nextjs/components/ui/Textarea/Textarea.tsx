@@ -1,16 +1,9 @@
-import { ComponentProps, forwardRef } from "react";
+import { forwardRef } from "react";
 import { FormControl, FormLabel, TextareaAutosize } from "@mui/material";
-
-interface TextareaProps extends ComponentProps<typeof TextareaAutosize> {
-  label: string;
-  required?: boolean;
-  formSize?: string;
-  error?: boolean;
-  helperText?: string;
-}
+import { TextareaProps } from "./type";
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  function Textarea(
+  (
     {
       label,
       required = false,
@@ -20,8 +13,8 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       helperText,
       ...props
     },
-    ref
-  ) {
+    _ref
+  ) => {
     return (
       <div className="pb-5">
         <FormControl className={formSize}>
@@ -38,7 +31,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             className={`p-3 border rounded h-44 ${
               error ? "border-red-600" : "border-neutral-300"
             }`}
-            ref={ref}
+            ref={_ref}
             placeholder={placeholder}
           />
           {error && (

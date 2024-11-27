@@ -1,8 +1,8 @@
-import Input from "./Input";
+import Select from "./Select";
 
 export default {
-  title: "ui/Input",
-  component: Input,
+  title: "ui/Select",
+  component: Select,
   args: {},
 };
 

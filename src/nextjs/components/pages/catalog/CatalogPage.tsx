@@ -1,7 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import Button from "@/components/ui/Button/Button";
-import Input from "@/components/ui/Input/Input";
-import Textarea from "@/components/ui/Textarea/Textarea";
+import { Button, Input, Select, Textarea } from "@/components/ui";
+import { prefectureOptions } from "utils/prefectures";
 
 type CatalogPageProps = {
   name: string;
@@ -68,6 +67,17 @@ export default function CatalogPage() {
             },
           })}
         />
+        <Select
+          label="都道府県"
+          required={true}
+          placeholder="- 都道府県選択 -"
+          error={!!errors.prefecture}
+          helperText={errors.prefecture?.message}
+          options={prefectureOptions}
+          {...register("prefecture", {
+            required: "都道府県を選択してください",
+          })}
+        />
         <Input
           label="市区町村"
           required={true}
@@ -91,9 +101,7 @@ export default function CatalogPage() {
         <Textarea
           label="ご意見・ご質問"
           placeholder="例）住宅ローンについて質問したい"
-          {...register("message", {
-            required: "ご意見・ご質問を入力してください",
-          })}
+          {...register("message")}
         />
         <Button type="submit" label="送信する" />
       </form>
