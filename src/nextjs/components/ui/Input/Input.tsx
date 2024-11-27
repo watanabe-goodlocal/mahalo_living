@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import { ComponentProps, forwardRef } from "react";
 import { TextField, FormControl, FormLabel } from "@mui/material";
 
 interface InputProps extends ComponentProps<typeof TextField> {
@@ -6,12 +6,10 @@ interface InputProps extends ComponentProps<typeof TextField> {
   required?: boolean;
 }
 
-export default function Input({
-  label,
-  required = false,
-  placeholder,
-  ...props
-}: InputProps) {
+const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
+  { label, required = false, placeholder, ...props },
+  ref
+) {
   return (
     <div className="pb-5">
       <FormControl className="w-full">
@@ -25,6 +23,7 @@ export default function Input({
         </FormLabel>
         <TextField
           {...props}
+          inputRef={ref}
           placeholder={placeholder}
           sx={{
             input: {
@@ -37,4 +36,6 @@ export default function Input({
       </FormControl>
     </div>
   );
-}
+});
+
+export default Input;
