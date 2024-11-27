@@ -1,10 +1,12 @@
 import Textarea from "./Textarea";
 
-export default {
+const textareaStory = {
   title: "ui/Textarea",
   component: Textarea,
   args: {},
 };
+
+export default textareaStory;
 
 export const Primary = {
   args: {

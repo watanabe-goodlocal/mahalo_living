@@ -1,11 +1,13 @@
 import Select from "./Select";
 import { prefectureOptions } from "utils/prefectures";
 
-export default {
+const selectStory = {
   title: "ui/Select",
   component: Select,
   args: {},
 };
+
+export default selectStory;
 
 export const Primary = {
   args: {

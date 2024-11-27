@@ -1,10 +1,12 @@
 import Input from "./Input";
 
-export default {
+const inputStory = {
   title: "ui/Input",
   component: Input,
   args: {},
 };
+
+export default inputStory;
 
 export const Primary = {
   args: {
