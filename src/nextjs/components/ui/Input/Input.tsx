@@ -4,15 +4,16 @@ import { TextField, FormControl, FormLabel } from "@mui/material";
 interface InputProps extends ComponentProps<typeof TextField> {
   label: string;
   required?: boolean;
+  formSize?: string;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  { label, required = false, placeholder, ...props },
+  { label, required = false, placeholder, formSize = "w-full", ...props },
   ref
 ) {
   return (
     <div className="pb-5">
-      <FormControl className="w-full">
+      <FormControl className={formSize}>
         <FormLabel
           className="font-bold text-primary"
           required={required}
