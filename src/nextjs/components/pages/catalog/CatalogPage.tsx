@@ -5,6 +5,7 @@ import { prefectureOptions } from "utils/prefectures";
 type CatalogPageProps = {
   name: string;
   email: string;
+  tel: string;
   postalCode: string;
   prefecture: string;
   city: string;
@@ -49,6 +50,20 @@ export default function CatalogPage() {
             pattern: {
               value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
               message: "メールアドレスの形式が不正です",
+            },
+          })}
+        />
+        <Input
+          label="お電話番号"
+          required={true}
+          placeholder="例）0466-54-7227"
+          error={!!errors.tel}
+          helperText={errors.tel?.message}
+          {...register("tel", {
+            required: "電話番号を入力してください",
+            pattern: {
+              value: /^(?!-)(\d{2,4}-?\d{2,4}-?\d{3,4}|\d{10,11})$/,
+              message: "電話番号の形式が不正です",
             },
           })}
         />
