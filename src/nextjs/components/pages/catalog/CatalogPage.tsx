@@ -1,5 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Button, Input, Select, Textarea } from "@/components/ui";
+import { Button, Checkbox, Input, Select, Textarea } from "@/components/ui";
 import { prefectureOptions } from "utils/prefectures";
 
 type CatalogPageProps = {
@@ -11,6 +11,7 @@ type CatalogPageProps = {
   city: string;
   address: string;
   message: string;
+  privacyPolicy: boolean;
 };
 
 export default function CatalogPage() {
@@ -117,6 +118,14 @@ export default function CatalogPage() {
           label="ご意見・ご質問"
           placeholder="例）住宅ローンについて質問したい"
           {...register("message")}
+        />
+        <Checkbox
+          label="プライバシーポリシーに同意する"
+          error={!!errors.privacyPolicy}
+          helperText={errors.privacyPolicy?.message}
+          {...register("privacyPolicy", {
+            required: "プライバシーポリシーへの同意は必須です",
+          })}
         />
         <Button type="submit" label="送信する" />
       </form>
