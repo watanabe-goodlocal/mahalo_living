@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { AppCacheProvider } from "@mui/material-nextjs/v15-pagesRouter";
 import "/styles/globals.css";
 import liff from "@line/liff";
 import Layout from "@/components/layout";
@@ -33,11 +32,9 @@ function MyApp({ Component, pageProps }) {
   pageProps.liff = liffObject;
   pageProps.liffError = liffError;
   return (
-    <AppCacheProvider {...pageProps}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </AppCacheProvider>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 }
 
